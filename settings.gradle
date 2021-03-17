@@ -1,1 +1,5 @@
-include ':buyer', ':seller', ':common'
+include ':myApp', ':myApp2', ':common'
+
+project(':myApp').projectDir = new File('apps/myApp/app')
+project(':myApp2').projectDir = new File('apps/myApp2/app')
+project(':common').projectDir = new File('libs/common')
