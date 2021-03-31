@@ -1,8 +1,11 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.firebase.crashlytics'
-apply plugin: 'com.google.firebase.firebase-perf'
+plugins {
+    id("com.android.application")
+    id("com.avito.android.instrumentation-test-impact-analysis")
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
+    id("kotlin-android")
+    id("kotlin-android-extensions")
+}
 
 android {
     compileSdkVersion Integer.parseInt(project.compileSdkVersion)

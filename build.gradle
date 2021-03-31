@@ -25,6 +25,12 @@ buildscript {
     }
 }
 
+plugins {
+    id("com.avito.android.impact")
+    id("com.android.application") apply false
+    id("com.avito.android.instrumentation-tests") apply false
+}
+
 allprojects {
     repositories {
         google()

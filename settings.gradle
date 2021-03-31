@@ -1,3 +1,25 @@
+pluginManagement {
+
+    repositories {
+        maven { url 'https://dl.bintray.com/avito/maven' }
+        mavenLocal()
+        jcenter()
+        google()
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            String pluginId = requested.id.id
+            if (pluginId.startsWith("com.avito.android")) {
+                useModule("com.avito.android:${pluginId.replace("com.avito.android.", "")}:$infraVersion")
+            }
+            if (pluginId.startsWith("com.android.")) {
+                useModule("com.android.tools.build:gradle:$androidGradlePluginVersion")
+            }
+        }
+    }
+}
+
 include ':myApp', ':myApp2', ':common'
 
 project(':myApp').projectDir = new File('apps/myApp/app')
